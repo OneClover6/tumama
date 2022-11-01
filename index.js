@@ -17,23 +17,4 @@ server.get('/', (req, res)=>{
     res.send('Hola Mundo');
 })
 
-server.listen(port, ()=>{
-    mensaje = `Esta conectando en la url https://localhost:${port}`;
-    switch (process.env.ENTORNO) {
-            case 'qa':
-                console.log(mensaje.bgYellow);
-            
-            break;
-            case 'development':
-                console.log(mensaje.bgBlue);
-            break;
-            case 'production':
-                console.log(mensaje.bgRed);
-
-            break;
-            default:
-                console.log(mensaje.bgRainbow);
-            break;
-    }
-});
-
+server.listen(port, callback());
